@@ -1,0 +1,9 @@
+import pandas as pd
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'David'],
+    'City': ['Paris', 'New York', 'Berlin', 'Tokyo']
+}
+df = pd.DataFrame(data)
+print("Original DataFrame:\n", df)
+df['Name'] = df['Name'].str.swapcase()
+print("\nDataFrame after swapping case in 'Name' column:\n", df)
