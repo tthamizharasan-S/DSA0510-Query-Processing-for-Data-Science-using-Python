@@ -1,0 +1,22 @@
+import matplotlib.pyplot as plt
+with open("test.txt", "w") as f:
+    f.write("1 2\n")
+    f.write("2 4\n")
+    f.write("3 6\n")
+    f.write("4 8\n")
+    f.write("5 10\n")
+
+x = []
+y = []
+
+with open("test.txt") as f:
+    for line in f:
+        a, b = map(int, line.split())
+        x.append(a)
+        y.append(b)
+
+plt.plot(x, y)
+plt.xlabel("X axis")
+plt.ylabel("Y axis")
+plt.title("Line Graph from Text File")
+plt.show()
