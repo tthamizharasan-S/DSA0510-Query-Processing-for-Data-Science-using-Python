@@ -1,0 +1,9 @@
+import pandas as pd
+data = {
+    'Item': ['Apple', 'Banana', 'Apple', 'Banana', 'Orange', 'Apple', 'Orange'],
+    'Month': ['Jan', 'Jan', 'Feb', 'Feb', 'Jan', 'Mar', 'Mar'],
+    'Sales': [100, 150, 200, 180, 120, 250, 300]
+}
+df = pd.DataFrame(data)
+pivot_table = pd.pivot_table(df, index='Item', values='Sales', aggfunc=['max', 'min'])
+print(pivot_table)
