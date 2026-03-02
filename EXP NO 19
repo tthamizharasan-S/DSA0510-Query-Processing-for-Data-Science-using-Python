@@ -1,0 +1,11 @@
+import pandas as pd
+data = {
+    'Year': [2000, 2001, 2002, 2003, 2004],
+    'WHO_region': ['Europe', 'Americas', 'Africa', 'Europe', 'Asia'],
+    'Country': ['France', 'USA', 'Nigeria', 'Germany', 'Japan'],
+    'Beverage_Types': ['Wine', 'Beer', 'Spirit', 'Wine', 'Beer'],
+    'Display_Value': [12.5, 8.0, 5.0, 10.0, 7.5]
+}
+df = pd.DataFrame(data)
+print("Shape of the DataFrame:", df.shape)
+print("Column Names:", df.columns.tolist())
