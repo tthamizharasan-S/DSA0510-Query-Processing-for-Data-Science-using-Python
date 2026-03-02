@@ -1,0 +1,15 @@
+import pandas as pd
+import numpy as np
+data = {
+    'Name': ['Alice', 'Bob', np.nan, 'David'],
+    'Age': [25, np.nan, np.nan, 40],
+    'City': [np.nan, 'New York', 'Los Angeles', np.nan],
+    'Score': [np.nan, 88, 92, np.nan]
+}
+df = pd.DataFrame(data)
+print("Original DataFrame:\n", df)
+df['Name'] = df['Name'].fillna('Unknown')
+df['City'] = df['City'].fillna('Unknown')
+df['Age'] = df['Age'].fillna(0)
+df['Score'] = df['Score'].fillna(0)
+print("\nDataFrame after replacing missing values:\n", df)
