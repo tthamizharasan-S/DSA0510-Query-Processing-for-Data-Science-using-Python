@@ -1,0 +1,10 @@
+import pandas as pd
+import yfinance as yf
+import matplotlib.pyplot as plt
+start_date = "2022-01-01"
+end_date = "2022-12-31"
+df = yf.download("GOOGL", start=start_date, end=end_date, auto_adjust=False)
+df['Close'].plot(title="Alphabet Inc. Stock Prices",
+                 xlabel="Date",
+                 ylabel="Closing Price")
+plt.show()
