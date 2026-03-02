@@ -1,0 +1,25 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+data_content = """
+Date,Open,High,Low,Close
+2022-01-01,100,105,98,102
+2022-01-02,102,108,100,106
+2022-01-03,106,110,104,109
+2022-01-04,109,112,107,111
+2022-01-05,111,115,109,114
+"""
+with open("fdata.csv", "w") as f:
+    f.write(data_content)
+
+data = pd.read_csv("fdata.csv")
+
+plt.plot(data['Date'], data['Open'], label='Open')
+plt.plot(data['Date'], data['High'], label='High')
+plt.plot(data['Date'], data['Low'], label='Low')
+plt.plot(data['Date'], data['Close'], label='Close')
+
+plt.xlabel("Date")
+plt.ylabel("Price")
+plt.title("Alphabet Inc. Stock Prices")
+plt.legend()
+plt.show()
