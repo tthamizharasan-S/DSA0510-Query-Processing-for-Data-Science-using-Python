@@ -1,0 +1,9 @@
+import pandas as pd
+data = {
+    'Country': ['France', 'USA', 'Nigeria', 'Germany', 'Japan'],
+    'Capital': ['Paris', 'Washington', 'Abuja', 'Berlin', 'Tokyo']
+}
+df = pd.DataFrame(data)
+print("Original DataFrame:\n", df)
+df['Substring_Index'] = df['Country'].str.find('an')
+print("\nDataFrame with substring index:\n", df)
