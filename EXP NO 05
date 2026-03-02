@@ -1,0 +1,17 @@
+import yfinance as yf
+import matplotlib.pyplot as plt
+
+# small date range (few days)
+start_date = "2022-01-03"
+end_date = "2022-01-10"
+
+# download stock data
+df = yf.download("GOOGL", start=start_date, end=end_date, auto_adjust=False)
+
+# bar plot of trading volume
+df['Volume'].plot(kind='bar', title="Alphabet Inc. Trading Volume")
+
+plt.xlabel("Date")
+plt.ylabel("Volume")
+plt.tight_layout()
+plt.show()
