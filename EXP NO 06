@@ -1,0 +1,20 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+alphabet_stock_data = pd.DataFrame({
+    'Date': pd.date_range(start='2022-01-01', periods=6),
+    'Close': [2800, 2825, 2790, 2810, 2830, 2850],
+    'Volume': [1500000, 1800000, 1600000, 1700000, 1750000, 1900000]
+})
+alphabet_stock_data['Date'] = pd.to_datetime(alphabet_stock_data['Date'])
+start_date = '2022-01-01'
+end_date = '2022-01-06'
+filtered_data = alphabet_stock_data[
+    (alphabet_stock_data['Date'] >= start_date) &
+    (alphabet_stock_data['Date'] <= end_date)
+]
+plt.figure(figsize=(8, 6))
+plt.scatter(filtered_data['Volume'], filtered_data['Close'])
+plt.xlabel('Trading Volume')
+plt.ylabel('Stock Price (Close)')
+plt.title('Alphabet Inc. Stock Price vs Trading Volume')
+plt.show()
