@@ -1,0 +1,13 @@
+import pandas as pd
+data = {
+    'EMPLOYEE_ID': [101, 102, 103, 104, 105, 106],
+    'FIRST_NAME': ['John', 'Jane', 'Mike', 'Emily', 'Chris', 'Anna'],
+    'LAST_NAME': ['Doe', 'Smith', 'Johnson', 'Davis', 'Brown', 'Wilson'],
+    'DEPARTMENT_ID': [10, 20, 10, 30, 20, 10]
+}
+df_sample = pd.DataFrame(data)
+distinct_departments_sample = df_sample['DEPARTMENT_ID'].unique()
+print("Sample DataFrame:")
+print(df_sample)
+print("\nDistinct Department IDs:")
+print(distinct_departments_sample)
