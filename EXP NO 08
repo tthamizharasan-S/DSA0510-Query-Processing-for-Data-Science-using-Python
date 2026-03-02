@@ -1,0 +1,9 @@
+import pandas as pd
+data = {
+    'Item': ['Apple', 'Banana', 'Apple', 'Banana', 'Orange', 'Apple', 'Orange'],
+    'Month': ['Jan', 'Jan', 'Feb', 'Feb', 'Jan', 'Mar', 'Mar'],
+    'Units_Sold': [10, 15, 20, 18, 12, 25, 30]
+}
+df = pd.DataFrame(data)
+pivot_table = pd.pivot_table(df, index='Item', values='Units_Sold', aggfunc='sum')
+print(pivot_table)
